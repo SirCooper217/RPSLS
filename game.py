@@ -4,6 +4,7 @@ from time import sleep
 
 class Game:
     def __init__(self):
+        self.gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         pass
     
     def run_game(self, participant):

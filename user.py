@@ -4,11 +4,10 @@ from time import sleep
 class User(Participant):
     def __init__(self, name:str):
         super().__init__()
-        self.score = 0
-        self.name = name
+        pass
 
-    def choose_gesture(self, user_input):
-        self.chosen_gesture = user_input
+    def choose_gesture(self):
         gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
-        user_input = 
-        print(f"{self.name} has chosen {gesture_list[int(self.chosen_gesture)]}")
+        user_input = input("\n What will you throw? \n0 for Rock \n1 for Paper \n2 for Scissors \n3 for Lizard \n4 for Spock")
+        self.chosen_gesture = int(user_input)
+        print(f"{self.name} has chosen {gesture_list[self.chosen_gesture]}")
