@@ -12,3 +12,4 @@ class Computer(Participant):
         gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         sleep(1)
         print(f"{self.name} has chosen {gesture_list[self.chosen_gesture]}")
+        pass
