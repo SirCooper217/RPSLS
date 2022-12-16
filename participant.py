@@ -6,5 +6,5 @@ class Participant:
         pass
 
     def add_point(self):
-        while self.score <= 2:
+        self.score += 1
         pass
