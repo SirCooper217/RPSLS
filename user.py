@@ -3,7 +3,7 @@ from time import sleep
 
 class User(Participant):
     def __init__(self, name:str):
-        super().__init__()
+        super().__init__(name)
         pass
 
     def choose_gesture(self):

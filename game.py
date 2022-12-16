@@ -10,87 +10,82 @@ class Game:
     def run_game(self):
         player_one = User("Player 1")
         self.display_welcome()
-        player_two = User
-        while player_two != Computer("Player 2"):
-            player_two = input("\nWould you like to play against the AI, or against another player? \n 1 for single-player \n 2 for multiplayer")
-            if player_two == "1":
+        player_two = input("\nWould you like to play against the AI, or against another player? \n 1 for single-player \n 2 for multiplayer\n")
+        if player_two == "1":
                 player_two = Computer("Player 2")
-                print("You've been joined by {self.player_two}(AI)!")
-            elif player_two == "2":
+                print("You've been joined by Player 2(AI)!")
+        elif player_two == "2":
                 player_two = User("Player 2")
                 print("Let's have a nice, clean fight!")
-            else:
+        else:
                 print("That was an invalid input. Please try again.")
                 sleep(1.5)
         while player_one.score < 2 and player_two.score < 2:
-            self.play_game("Player 1", "Player 2")
-        
+            self.play_game(player_one, player_two)
+        self.display_winner()
         pass
 
     def play_game(self, player_one, player_two):
         print("\nPlayer 1, your turn: \n")
-        player_one.choose_gesture
-        if player_two == Computer("Player 2"):
-            player_two.choose_gesture
-        else:
-           print("\nPlayer 2, your turn: \n") 
-           player_two.choose_gesture
+        player_one.choose_gesture()
+        print("\nPlayer 2, your turn: \n") 
+        player_two.choose_gesture()
         if player_one.chosen_gesture == player_two.chosen_gesture:
             print(f"Both players selected {player_one.chosen_gesture}. It's a tie!\n")
             # Tie Results
-        elif player_one.chosen_gesture == "Rock":
+        elif player_one.chosen_gesture == 0:
             if player_two.chosen_gesture == "Scissors":
                 print("Rock smashes Scissors!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Lizard":
                 print("Rock crushes Lizard!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Spock":
                 print("Spock vaporizes Rock!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Paper":
                 print("Paper covers rock!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             else: 
                 print("I'm sorry, that input is ivalid. Please try again.\n")
                 sleep(1)
                 # Player 1 Chooses Rock results
-        elif player_one.chosen_gesture == "Paper":
+        elif player_one.chosen_gesture == 1:
             if player_two.chosen_gesture == "Rock":
                 print("Paper covers rock!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Scissors":
                 print("Scissors cuts paper!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Spock":
                 print("Paper disproves Spock!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Lizard":
                 print("Lizard eats Paper!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             else: 
                 print("I'm sorry, that input is ivalid. Please try again.\n")
@@ -100,25 +95,25 @@ class Game:
                 print("Scissors cuts paper!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Rock":
                 print("Rock smashes scissors!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Lizard":
                 print("Scissors decapitates Lizard!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Spock":
                 print("Spock smashes Scissors!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             else: 
                 print("I'm sorry, that input is ivalid. Please try again.\n")
@@ -129,25 +124,25 @@ class Game:
                print("Scissors decapitates Lizard!\n")
                sleep(1)
                print("Player 2 wins!\n")
-               player_two.add_point
+               player_two.add_point()
                sleep(1)
             elif player_two.chosen_gesture == "Spock":
                 print("Lizard poisons Spock!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Rock":
                 print("Rock crushes Lizard!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Paper":
                 print("Lizard eats Paper!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             else: 
                 print("I'm sorry, that input is ivalid. Please try again.\n")
@@ -158,25 +153,25 @@ class Game:
                 print("Spock smashes Scissors!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Lizard":
                 print("Lizard poisons Spock!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Paper":
                 print("Paper disproves Spock!\n")
                 sleep(1)
                 print("Player 2 wins!\n")
-                player_two.add_point
+                player_two.add_point()
                 sleep(1)
             elif player_two.chosen_gesture == "Rock":
                 print("Spock vaporizes Rock!\n")
                 sleep(1)
                 print("Player 1 wins!\n")
-                player_one.add_point
+                player_one.add_point()
                 sleep(1)
             else:
                 print("I'm sorry, that input is ivalid. Please try again.\n")
