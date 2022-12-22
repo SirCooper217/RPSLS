@@ -41,7 +41,7 @@ class Game:
         print("\nPlayer 2, your turn: \n") 
         player_two.choose_gesture()
         if player_one.chosen_gesture == player_two.chosen_gesture:
-            print(f"Both players selected {player_one.chosen_gesture}. It's a tie!\n")
+            print(f"Both players selected {player_one.gesture_list[player_one.chosen_gesture]}. It's a tie!\n")
             # Tie Results
         elif player_one.chosen_gesture == 0:
             if player_two.chosen_gesture == 2:
