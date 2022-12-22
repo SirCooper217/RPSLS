@@ -34,151 +34,151 @@ class Game:
             print(f"Both players selected {player_one.chosen_gesture}. It's a tie!\n")
             # Tie Results
         elif player_one.chosen_gesture == 0:
-            if player_two.chosen_gesture == "Scissors":
+            if player_two.chosen_gesture == 2:
                 print("Rock smashes Scissors!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Lizard":
+            elif player_two.chosen_gesture == 3:
                 print("Rock crushes Lizard!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Spock":
+            elif player_two.chosen_gesture == 4:
                 print("Spock vaporizes Rock!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Paper":
+            elif player_two.chosen_gesture == 1:
                 print("Paper covers rock!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
             else: 
-                print("I'm sorry, that input is ivalid. Please try again.\n")
+                print("I'm sorry, that input is invalid. Please try again.\n")
                 sleep(1)
                 # Player 1 Chooses Rock results
         elif player_one.chosen_gesture == 1:
-            if player_two.chosen_gesture == "Rock":
+            if player_two.chosen_gesture == 0:
                 print("Paper covers rock!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Scissors":
+            elif player_two.chosen_gesture == 2:
                 print("Scissors cuts paper!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Spock":
+            elif player_two.chosen_gesture == 4:
                 print("Paper disproves Spock!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Lizard":
+            elif player_two.chosen_gesture == 3:
                 print("Lizard eats Paper!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
             else: 
-                print("I'm sorry, that input is ivalid. Please try again.\n")
+                print("I'm sorry, that input is invalid. Please try again.\n")
                 # Player 1 chooses Paper results
-        elif player_one.chosen_gesture == "Scissors":
-            if player_two.chosen_gesture == "Paper":
+        elif player_one.chosen_gesture == 2:
+            if player_two.chosen_gesture == 1:
                 print("Scissors cuts paper!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Rock":
+            elif player_two.chosen_gesture == 0:
                 print("Rock smashes scissors!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Lizard":
+            elif player_two.chosen_gesture == 3:
                 print("Scissors decapitates Lizard!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Spock":
+            elif player_two.chosen_gesture == 4:
                 print("Spock smashes Scissors!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
             else: 
-                print("I'm sorry, that input is ivalid. Please try again.\n")
+                print("I'm sorry, that input is invalid. Please try again.\n")
                 sleep(1)
                 #Player 1 chooses Scissors results
-        elif player_one.chosen_gesture == "Lizard":
-            if player_two.chosen_gesture == "Scissors":
+        elif player_one.chosen_gesture == 3:
+            if player_two.chosen_gesture == 2:
                print("Scissors decapitates Lizard!\n")
                sleep(1)
-               print("Player 2 wins!\n")
+               print("Player 2 scores!\n")
                player_two.add_point()
                sleep(1)
-            elif player_two.chosen_gesture == "Spock":
+            elif player_two.chosen_gesture == 4:
                 print("Lizard poisons Spock!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Rock":
+            elif player_two.chosen_gesture == 0:
                 print("Rock crushes Lizard!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Paper":
+            elif player_two.chosen_gesture == 1:
                 print("Lizard eats Paper!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
             else: 
-                print("I'm sorry, that input is ivalid. Please try again.\n")
+                print("I'm sorry, that input is invalid. Please try again.\n")
                 sleep(1)
                 #Player 1 chooses Lizard reults
-        elif player_one.chosen_gesture == "Spock":
-            if player_two.chosen_gesture == "Scissors":
+        elif player_one.chosen_gesture == 4:
+            if player_two.chosen_gesture == 2:
                 print("Spock smashes Scissors!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Lizard":
+            elif player_two.chosen_gesture == 3:
                 print("Lizard poisons Spock!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Paper":
+            elif player_two.chosen_gesture == 1:
                 print("Paper disproves Spock!\n")
                 sleep(1)
-                print("Player 2 wins!\n")
+                print("Player 2 scores!\n")
                 player_two.add_point()
                 sleep(1)
-            elif player_two.chosen_gesture == "Rock":
+            elif player_two.chosen_gesture == 0:
                 print("Spock vaporizes Rock!\n")
                 sleep(1)
-                print("Player 1 wins!\n")
+                print("Player 1 scores!\n")
                 player_one.add_point()
                 sleep(1)
             else:
-                print("I'm sorry, that input is ivalid. Please try again.\n")
+                print("I'm sorry, that input is invalid. Please try again.\n")
                 sleep(1)
                 #Player 1 chooses Spock results
         else: 
-            print("I'm sorry, that input is ivalid. Please try again.\n")
+            print("I'm sorry, that input is invalid. Please try again.\n")
             sleep(1)
     pass
 
