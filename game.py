@@ -9,20 +9,30 @@ class Game:
     
     def run_game(self):
         player_one = User("Player 1")
-        self.display_welcome()
-        player_two = input("\nWould you like to play against the AI, or against another player? \n 1 for single-player \n 2 for multiplayer\n")
-        if player_two == "1":
-                player_two = Computer("Player 2")
-                print("You've been joined by Player 2(AI)!")
-        elif player_two == "2":
-                player_two = User("Player 2")
-                print("Let's have a nice, clean fight!")
-        else:
-                print("That was an invalid input. Please try again.")
-                sleep(1.5)
-        while player_one.score < 2 and player_two.score < 2:
-            self.play_game(player_one, player_two)
-        self.display_winner()
+        keep_playing = True
+        while keep_playing:
+            self.display_welcome()
+            player_two = input("\nWould you like to play against the AI, or against another player? \n 1 for single-player \n 2 for multiplayer\n")
+            if player_two == "1":
+                    player_two = Computer("Player 2")
+                    print("You've been joined by Player 2(AI)!")
+            elif player_two == "2":
+                    player_two = User("Player 2")
+                    print("Let's have a nice, clean fight!")
+            else:
+                    print("That was an invalid input. Please try again.")
+                    sleep(1.5)
+            while player_one.score < 2 and player_two.score < 2:
+                self.play_game(player_one, player_two)
+            self.display_winner(player_one)
+            pa_input = input("\nWould you like to play again? Y/N")
+            if pa_input.upper == "N":
+                keep_playing = False
+                print("\nThanks for playing! :)")
+            else:
+                print("\n Let's go again!")
+                player_one.score = 0
+                player_two.score = 0
         pass
 
     def play_game(self, player_one, player_two):
@@ -189,5 +199,10 @@ class Game:
         sleep(2.5)
         pass
 
-    def display_winner(self):
+    def display_winner(self, player_one):
+        if player_one.score >= 2:
+            print("\n Player 1 won!! Have a cookie!")
+        else:
+            print("\n Player 2 won!! Have a sweetroll!")
         pass
+
