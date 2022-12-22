@@ -13,20 +13,24 @@ class Game:
         while keep_playing:
             self.display_welcome()
             player_two = input("\nWould you like to play against the AI, or against another player? \n 1 for single-player \n 2 for multiplayer\n")
+            sleep(0.5)
             if player_two == "1":
                     player_two = Computer("Player 2")
                     print("You've been joined by Player 2(AI)!")
+                    sleep(0.5)
             elif player_two == "2":
                     player_two = User("Player 2")
                     print("Let's have a nice, clean fight!")
+                    sleep(0.5)
             else:
                     print("That was an invalid input. Please try again.")
                     sleep(1.5)
             while player_one.score < 2 and player_two.score < 2:
                 self.play_game(player_one, player_two)
+            sleep(0.5)
             self.display_winner(player_one)
-            pa_input = input("\nWould you like to play again? Y/N")
-            if pa_input.upper == "N":
+            pa_input= input("\nWould you like to play again? Y/N")
+            if pa_input.upper() == "N":
                 keep_playing = False
                 print("\nThanks for playing! :)")
             else:
@@ -38,10 +42,13 @@ class Game:
     def play_game(self, player_one, player_two):
         print("\nPlayer 1, your turn: \n")
         player_one.choose_gesture()
+        sleep(0.75)
         print("\nPlayer 2, your turn: \n") 
         player_two.choose_gesture()
+        sleep(0.75)
         if player_one.chosen_gesture == player_two.chosen_gesture:
-            print(f"Both players selected {player_one.gesture_list[player_one.chosen_gesture]}. It's a tie!\n")
+            print(f"Both players selected the same gesture! \nIt's a tie!\n")
+            sleep(1)
             # Tie Results
         elif player_one.chosen_gesture == 0:
             if player_two.chosen_gesture == 2:
@@ -193,7 +200,7 @@ class Game:
     pass
 
     def display_welcome(self):
-        print("\n Welcome to RPSLS! \nEach game is a best of three! The rules are:")
+        print("\nWelcome to RPSLS! \nEach game is a best of three! The rules are:\n")
         sleep(1)
         print("\nRock crushes Scissors \nScissors cuts Paper \nPaper covers Rock \nRock crushes Lizard \nLizard poisons Spock \nSpock smashes Scissors \nScissors decapitates Lizard \nLizard eats Paper \nPaper disproves Spock \nSpock vaporizes Rock")
         sleep(2.5)
@@ -201,8 +208,10 @@ class Game:
 
     def display_winner(self, player_one):
         if player_one.score >= 2:
-            print("\n Player 1 won!! Have a cookie!")
+            print("\nPlayer 1 won!! Have a cookie!\n")
+            sleep(0.5)
         else:
-            print("\n Player 2 won!! Have a sweetroll!")
+            print("\nPlayer 2 won!! Have a sweetroll!\n")
+            sleep(0.5)
         pass
 
