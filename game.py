@@ -5,6 +5,7 @@ from time import sleep
 class Game:
     def __init__(self):
         self.gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        #Gesture list for use later
         pass
     
     def run_game(self):
@@ -13,30 +14,39 @@ class Game:
         while keep_playing:
             self.display_welcome()
             player_two = input("\nWould you like to play against the AI, or against another player? \n 1 for single-player \n 2 for multiplayer\n")
+            #Asks for player count
             sleep(0.5)
             if player_two == "1":
                     player_two = Computer("Player 2")
                     print("You've been joined by Player 2(AI)!")
                     sleep(0.5)
+                    #Player v AI
             elif player_two == "2":
                     player_two = User("Player 2")
                     print("Let's have a nice, clean fight!")
                     sleep(0.5)
+                    #Player v Player
             else:
                     print("That was an invalid input. Please try again.")
                     sleep(1.5)
+                    continue
+                    #Determines invalid input, retries.
             while player_one.score < 2 and player_two.score < 2:
                 self.play_game(player_one, player_two)
+                #Plays the game as a "best of 3" style game
             sleep(0.5)
             self.display_winner(player_one)
             pa_input= input("\nWould you like to play again? Y/N")
+            #Asks if the user would like to play again
             if pa_input.upper() == "N":
                 keep_playing = False
                 print("\nThanks for playing! :)")
+                #Terminates program
             else:
                 print("\n Let's go again!")
                 player_one.score = 0
                 player_two.score = 0
+                #Restarts the program
         pass
 
     def play_game(self, player_one, player_two):
@@ -47,7 +57,7 @@ class Game:
         player_two.choose_gesture()
         sleep(0.75)
         if player_one.chosen_gesture == player_two.chosen_gesture:
-            print(f"Both players selected the same gesture! \nIt's a tie!\n")
+            print(f"Both players selected {self.gesture_list[player_one.chosen_gesture]}! \nIt's a tie!\n")
             sleep(1)
             # Tie Results
         elif player_one.chosen_gesture == 0:
@@ -201,8 +211,10 @@ class Game:
 
     def display_welcome(self):
         print("\nWelcome to RPSLS! \nEach game is a best of three! The rules are:\n")
+        #Greeting
         sleep(1)
         print("\nRock crushes Scissors \nScissors cuts Paper \nPaper covers Rock \nRock crushes Lizard \nLizard poisons Spock \nSpock smashes Scissors \nScissors decapitates Lizard \nLizard eats Paper \nPaper disproves Spock \nSpock vaporizes Rock")
+        #Rules
         sleep(2.5)
         pass
 

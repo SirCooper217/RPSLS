@@ -7,4 +7,5 @@ class Participant:
 
     def add_point(self):
         self.score += 1
+        #Adds a point for a round won
         pass
